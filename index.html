@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفو روف توپ | Avo Rooftop Saida</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        avo: {
+                            green: '#2D4A3E',
+                            lightGreen: '#4A7C59',
+                            gold: '#D4AF37',
+                            dark: '#0C1210',
+                            card: '#16221D',
+                            accent: '#1E2D26'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+        .glass-header {
+            background: rgba(12, 18, 16, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0B9 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+        }
+        .green-bg-gradient {
+            background: linear-gradient(135deg, #4A7C59 0%, #2D4A3E 100%);
+        }
+    </style>
+</head>
+<body class="bg-avo-dark text-gray-100 antialiased selection:bg-avo-gold selection:text-black">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-avo-card via-avo-accent to-avo-card text-xs sm:text-sm py-2 px-4 border-b border-avo-gold/20 text-center">
+        <span class="inline-block animate-pulse text-avo-gold ml-2">✦</span>
+        إطلالة ساحرة وأجواء راقية في قلب صيدا — احجز طاولتك لعطلة نهاية الأسبوع الآن!
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 glass-header border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- BRAND LOGO -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-avo-gold/20">
+                        A
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-white">أفو روف توپ</span>
+                        <span class="block text-[10px] tracking-widest text-avo-gold font-medium -mt-1">AVO ROOFTOP SAIDA</span>
+                    </div>
+                </div>
+
+                <!-- DESKTOP NAV LINKS -->
+                <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-medium text-gray-300">
+                    <a href="#about" class="hover:text-avo-gold transition-colors">عن المكان</a>
+                    <a href="#menu" class="hover:text-avo-gold transition-colors">قائمة الطعام التفاعلية</a>
+                    <a href="#experience" class="hover:text-avo-gold transition-colors">الإطلالة والأجواء</a>
+                    <a href="#booking" class="hover:text-avo-gold transition-colors">حجز طاولة</a>
+                    <a href="#location" class="hover:text-avo-gold transition-colors">الموقع والتواصل</a>
+                </nav>
+
+                <!-- CALL TO ACTION -->
+                <div class="hidden sm:flex items-center space-x-4 space-x-reverse">
+                    <a href="tel:+96176327090" class="text-sm font-semibold text-gray-300 hover:text-white flex items-center gap-2 border border-white/20 rounded-full px-4 py-2 hover:border-avo-gold transition">
+                        <i class="fa-solid fa-phone text-avo-gold"></i>
+                        76 327 090
+                    </a>
+                    <a href="#booking" class="gold-bg-gradient text-black text-sm font-bold px-5 py-2.5 rounded-full hover:opacity-90 transition shadow-lg shadow-avo-gold/20">
+                        حجز سريع
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden md:hidden bg-avo-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block text-gray-300 hover:text-avo-gold py-2">عن المكان</a>
+            <a href="#menu" class="block text-gray-300 hover:text-avo-gold py-2">قائمة الطعام التفاعلية</a>
+            <a href="#experience" class="block text-gray-300 hover:text-avo-gold py-2">الإطلالة والأجواء</a>
+            <a href="#booking" class="block text-gray-300 hover:text-avo-gold py-2">حجز طاولة</a>
+            <a href="#location" class="block text-gray-300 hover:text-avo-gold py-2">الموقع والتواصل</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:+96176327090" class="text-center text-sm font-semibold text-gray-300 border border-white/20 rounded-full py-2.5">
+                    <i class="fa-solid fa-phone text-avo-gold ml-2"></i> اتصل بنا 76 327 090
+                </a>
+                <a href="#booking" class="text-center gold-bg-gradient text-black text-sm font-bold py-2.5 rounded-full">
+                    حجز طاولة الآن
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-avo-dark via-avo-card to-avo-dark">
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-avo-dark via-avo-dark/80 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl text-right space-y-6">
+                <div class="inline-flex items-center gap-2 bg-avo-card/90 border border-avo-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold text-avo-gold">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    صيدا، لبنان — أروع إطلالات الروفتوب
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
+                    أجواء ساحرة وإطلالة استثنائية في <span class="gold-gradient-text">أفو روف توپ</span>
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-light">
+                    نرحب بكم في أجمل وجهات صيدا المرتفعة لنقدم لكم أشهى الأطباق والمشروبات في أجواء راقية ومريحة تضمن لكم أوقاتاً لا تُنسى.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#menu" class="gold-bg-gradient text-black font-bold px-8 py-4 rounded-xl shadow-xl hover:scale-[1.02] transition-transform duration-200 flex items-center gap-3">
+                        <span>تصفح قائمة الطعام والمشروبات</span>
+                        <i class="fa-solid fa-utensils"></i>
+                    </a>
+                    <a href="#booking" class="bg-avo-card hover:bg-avo-card/80 border border-white/10 text-white font-medium px-6 py-4 rounded-xl transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days text-avo-gold"></i>
+                        احجز طاولتك الآن
+                    </a>
+                </div>
+
+                <!-- QUICK STATS -->
+                <div class="grid grid-cols-3 gap-4 pt-10 border-t border-white/10 max-w-xl">
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-extrabold text-avo-gold">4.2 ★</span>
+                        <span class="text-xs text-gray-400">تقييم الزوار</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-extrabold text-white">إطلالة</span>
+                        <span class="text-xs text-gray-400">ساحرة ومميزة</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-extrabold text-avo-gold">9ص - 12م</span>
+                        <span class="text-xs text-gray-400">مواعيد العمل يومياً</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-avo-card/40 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-avo-gold text-sm font-semibold tracking-wider uppercase">عن أفو روف توپ</span>
+                    <h2 class="text-3xl font-extrabold text-white">وجهتكم المميزة للاسترخاء واللقاءات</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        يتميز أفو روف توپ في صيدا بتقديم تجربة متكاملة تجمع بين روعة الجلسات المرتفعة، جودة الأطباق الغربية والعالمية، وتشقيقات المشروبات والقهوة الفاخرة في بيئة عنوانها الهدوء والأناقة.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-avo-dark p-4 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-cocktail text-avo-gold text-xl mb-2"></i>
+                            <h4 class="text-white font-bold text-sm">مشروبات وموكتيلات</h4>
+                            <p class="text-xs text-gray-400 mt-1">تشكيلة واسعة ومنعشة يومياً</p>
+                        </div>
+                        <div class="bg-avo-dark p-4 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-burger text-avo-gold text-xl mb-2"></i>
+                            <h4 class="text-white font-bold text-sm">أطباق ومقبلات لذيذة</h4>
+                            <p class="text-xs text-gray-400 mt-1">وجبات شهية محضرة بعناية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-80 sm:h-96">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Avo Rooftop Ambiance" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE MENU SECTION -->
+    <section id="menu" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-avo-gold text-sm font-semibold tracking-wider uppercase">قائمة الطعام والمشروبات</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">اختر طلباتك واحسب التكلفة الفورية</h2>
+                <p class="text-gray-400 text-sm mt-2">حدد الأطباق والمشروبات المفضلة لديك لترفق مباشرة مع حجز الطاولة عبر الواتساب</p>
+            </div>
+
+            <!-- MENU FILTER BUTTONS -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterMenu('all')" class="menu-filter-btn active bg-avo-gold text-black font-bold px-5 py-2.5 rounded-full text-sm transition">الكل</button>
+                <button onclick="filterMenu('meals')" class="menu-filter-btn bg-avo-card text-gray-300 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm border border-white/10 transition">الأطباق والوجبات السريعة</button>
+                <button onclick="filterMenu('appetizers')" class="menu-filter-btn bg-avo-card text-gray-300 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm border border-white/10 transition">المقبلات والسلطات</button>
+                <button onclick="filterMenu('beverages')" class="menu-filter-btn bg-avo-card text-gray-300 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm border border-white/10 transition">المشروبات والكوكتيلات</button>
+            </div>
+
+            <!-- MENU GRID -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+                <!-- ITEM 1 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="meals">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">أفو روف توپ برجر خاص</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$12</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">لحم بقر طازج مشوي على الفحم، جبنة شيدر، صوص الأفوكادو الخاص مع البطاطا المقلية.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">وجبات رئيسية</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="12" data-name="أفو روف توپ برجر خاص" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="meals">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">بيتزا بيبروني أو مارغريتا</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$11</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">عجينة طازجة رقيقة، صلصة طماطم غنية وجبنة موتزاريلا إيطالية أصلية.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">أطباق إيطالية</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="11" data-name="بيتزا بيبروني / مارغريتا" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="appetizers">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">سلطة أفوكادو كينوا الصحية</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$10</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">قطع أفوكادو طازجة، كينوا، طماطم كرزية وجوز مع صوص الليمون الخفيف.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">سلطات صحية</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="10" data-name="سلطة أفوكادو كينوا" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="beverages">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">موكتيل أفو روف توپ الخاص</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$7</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">مزيج استوائي منعش من الفواكه الطازجة الطبيعية والنعناع.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">مشروبات باردة</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="7" data-name="موكتيل أفو روف توپ" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ITEM 5 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="beverages">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">قهوة لاتيه أو كابتشينو فاخرة</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$4</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">إسبريسو غني مع حليب مبشور ورغوة كريمية ناعمة.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">مشروبات ساخنة</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="4" data-name="قهوة لاتيه / كابتشينو" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ITEM 6 -->
+                <div class="menu-card bg-avo-card/80 rounded-2xl overflow-hidden border border-white/10 p-5 flex flex-col justify-between" data-category="appetizers">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-lg font-bold text-white">بطاطا مقلية مقرمشة بالصلصة</h3>
+                            <span class="text-avo-gold font-extrabold text-base">$6</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">بطاطا ذهبية مقرمشة تقدم مع تشكيلة من الصوصات المميزة.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">مقبلات خفيفة</span>
+                        <label class="flex items-center gap-2 cursor-pointer bg-avo-dark px-3 py-1.5 rounded-xl border border-white/10 hover:border-avo-gold">
+                            <span class="text-xs text-avo-gold font-bold">إضافة</span>
+                            <input type="checkbox" value="6" data-name="بطاطا مقلية مقرمشة" class="menu-item accent-yellow-600 w-4 h-4" onchange="calculateOrderTotal()">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-20 bg-avo-card/40 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-avo-gold text-sm font-semibold tracking-wider uppercase">مميزات المكان</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">لماذا يختار الزوار أفو روف توپ؟</h2>
+                <div class="w-16 h-1 gold-bg-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-avo-dark rounded-2xl p-6 border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-avo-gold/10 text-avo-gold flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">إطلالة روف توپ ساحرة</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">استمتع بالهواء الطلق والمناظر الرائعة في أجواء مرتفعة ومريحة في صيدا.</p>
+                </div>
+                <div class="bg-avo-dark rounded-2xl p-6 border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-avo-gold/10 text-avo-gold flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">أجواء هادئة وموسيقية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">موسيقى هادئة تضفي طابعاً من الاسترخاء وتناسب الأوقات الاجتماعية واللقاءات.</p>
+                </div>
+                <div class="bg-avo-dark rounded-2xl p-6 border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-avo-gold/10 text-avo-gold flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">تقييم 4.2 من الزوار</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">خدمة ممتازة واهتمام تفصيلي يضمن لعملائنا تجربة مريحة ومميزة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING & WHATSAPP ORDER SECTION -->
+    <section id="booking" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-b from-avo-card to-avo-dark rounded-3xl p-6 sm:p-10 border border-avo-gold/30 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">حجز طاولة وإرسال الطلب عبر واتساب</h2>
+                    <p class="text-gray-300 text-sm mt-2">املأ بياناتك أدناه وحدد نوع الجلسة والأطباق لإرسال الحجز مباشرة لإدارة أفو روف توپ</p>
+                </div>
+
+                <form id="booking-form" onsubmit="sendToWhatsApp(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-1">الاسم الكريم *</label>
+                            <input type="text" id="user-name" required placeholder="أدخل اسمك" class="w-full bg-avo-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-avo-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-1">رقم الهاتف *</label>
+                            <input type="tel" id="user-phone" required placeholder="76 XXXXXX" class="w-full bg-avo-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-avo-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-1">نوع الجلسة المفضلة</label>
+                            <select id="user-table" class="w-full bg-avo-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-avo-gold">
+                                <option value="جلسة خارجية بإطلالة روف توپ">جلسة خارجية بإطلالة روف توپ</option>
+                                <option value="جلسة داخلية هادئة ومريحة">جلسة داخلية هادئة ومريحة</option>
+                                <option value="جلسة عائلية خاصة">جلسة عائلية خاصة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- ORDER TOTAL SUMMARY -->
+                    <div class="bg-avo-dark/80 p-4 rounded-xl border border-avo-gold/20 flex justify-between items-center">
+                        <div>
+                            <span class="block text-sm text-gray-300">التكلفة التقديرية للأطباق والمشروبات:</span>
+                            <span class="text-xs text-gray-400">الدفع والسداد عند الوصول للمكان</span>
+                        </div>
+                        <span class="text-2xl font-extrabold text-avo-gold" id="total-price">$0 USD</span>
+                    </div>
+
+                    <button type="submit" class="w-full gold-bg-gradient text-black font-extrabold py-4 rounded-xl shadow-lg hover:opacity-95 transition text-base flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        تأكيد حجز الطاولة وإرسال الطلب عبر واتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT SECTION -->
+    <section id="location" class="py-20 bg-avo-card/60 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <span class="text-avo-gold text-sm font-semibold">تفضل بزيارتنا</span>
+                    <h2 class="text-3xl font-extrabold text-white">أفو روف توپ - صيدا</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        ننتظر زيارتكم بكل شوق لنقدم لكم أروع الأجواء والإطلالات في صيدا.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-avo-dark flex items-center justify-center text-avo-gold border border-white/10 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">العنوان الدقيق</h4>
+                                <p class="text-gray-400 text-xs mt-1">صيدا، لبنان</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-avo-dark flex items-center justify-center text-avo-gold border border-white/10 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">الهاتف المباشر</h4>
+                                <p class="text-gray-400 text-xs mt-1">+961 76 327 090</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-avo-dark flex items-center justify-center text-avo-gold border border-white/10 shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">أوقات العمل</h4>
+                                <p class="text-gray-400 text-xs mt-1">يومياً من 9:00 صباحاً وحتى 12:00 منتصف الليل</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://maps.app.goo.gl/Cp8yJHcwRf7f8buc8" target="_blank" class="inline-flex items-center gap-2 bg-avo-dark border border-avo-gold/40 text-avo-gold font-bold px-6 py-3 rounded-xl hover:bg-avo-gold hover:text-black transition duration-200 text-sm">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            فتح الموقع في خرائط Google
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GOOGLE MAPS EMBED -->
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Avo+Rooftop+Sidon+Lebanon&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-avo-dark py-8 border-t border-white/10 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 أفو روف توپ — صيدا — جميع الحقوق محفوظة | نموذج تجربة رقمية تفاعلية مخصصة</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // MOBILE MENU TOGGLE
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // MENU FILTERING LOGIC
+        function filterMenu(category) {
+            const cards = document.querySelectorAll('.menu-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.menu-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-avo-gold', 'text-black', 'font-bold');
+                btn.classList.add('bg-avo-card', 'text-gray-300', 'font-medium');
+            });
+            event.target.classList.add('bg-avo-gold', 'text-black', 'font-bold');
+            event.target.classList.remove('bg-avo-card', 'text-gray-300');
+        }
+
+        // CALCULATE ORDER TOTAL
+        function calculateOrderTotal() {
+            let total = 0;
+            const checkboxes = document.querySelectorAll('.menu-item:checked');
+            checkboxes.forEach(cb => {
+                total += parseInt(cb.value);
+            });
+            document.getElementById('total-price').innerText = `$${total} USD`;
+        }
+
+        // WHATSAPP DIRECT SENDING
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const phone = document.getElementById('user-phone').value;
+            const tableType = document.getElementById('user-table').value;
+            
+            const selectedItems = Array.from(document.querySelectorAll('.menu-item:checked'))
+                .map(cb => cb.getAttribute('data-name'))
+                .join('، ');
+
+            const total = document.getElementById('total-price').innerText;
+
+            const text = `مرحباً إدارة أفو روف توپ، أرغب في حجز طاولة:\n\n- الاسم: ${name}\n- الهاتف: ${phone}\n- نوع الجلسة: ${tableType}\n- الطلبات المسبقة: ${selectedItems || 'بدون طلب مسبق'}\n- التكلفة التقديرية: ${total}`;
+            const encodedText = encodeURIComponent(text);
+            
+            // Redirecting directly to branch WhatsApp contact
+            window.open(`https://wa.me/96176327090?text=${encodedText}`, '_blank');
+        }
+    </script>
+</body>
+</html>
